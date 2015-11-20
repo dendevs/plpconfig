@@ -1,6 +1,6 @@
-# PlpAdaptability
+# PlpConfig
 
-[![Build Status](https://travis-ci.org/dendevs/plpadaptability.svg)](https://travis-ci.org/dendevs/plpadaptability)
-[![Coverage Status](https://coveralls.io/repos/dendevs/plpadaptability/badge.svg?branch=master&service=github)](https://coveralls.io/github/dendevs/plpadaptability?branch=master)
+[![Build Status](https://travis-ci.org/dendevs/plpconfig.svg)](https://travis-ci.org/dendevs/plpconfig)
+[![Coverage Status](https://coveralls.io/repos/dendevs/plpconfig/badge.svg?branch=master&service=github)](https://coveralls.io/github/dendevs/plpconfig?branch=master)
 
 *For service in single or kernel usage*

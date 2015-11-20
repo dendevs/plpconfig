@@ -1,13 +1,13 @@
 <?php
-namespace DenDev\Plpskeleton;
-use DenDev\Plpskeleton\SkeletonInterface;
+namespace DenDev\Plpconfig;
+use DenDev\Plpconfig\ConfigInterface;
 use DenDev\Plpadaptability\Adaptability;
 
 
 /**
- *  Skeleton 
+ *  Config 
  */
-class Skeleton extends Adaptability implements SkeletonInterface
+class Config extends Adaptability implements ConfigInterface
 {
     /**
      * Set le kernel du servie 
@@ -42,7 +42,7 @@ class Skeleton extends Adaptability implements SkeletonInterface
     public function set_service_metas()
     {
 		$this->_service_metas = array( 
-			'service_name' => 'skeleton',
+			'service_name' => 'config',
 			'service_version' => '0.0.0',
 			);
     }
