@@ -3,7 +3,10 @@
     "description": "config for pulpy project",
     "type": "libs",
     "require": {
-        "dendev/plpadaptability": "dev-master"
+        "dendev/plpadaptability": "dev-master",
+        "herrera-io/wise": "dev-master",
+        "herrera-io/json": "^1.0@dev",
+        "symfony/yaml": "^3.0@dev"
     },
     "require-dev": {
         "satooshi/php-coveralls": "dev-master"
@@ -17,7 +20,8 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "DenDev\\Plpconfig\\": "src"
+            "DenDev\\Plpconfig\\": "src",
+            "DenDev\\Plpconfig\\Lib\\": "src/libs"
         }
     }
 }
