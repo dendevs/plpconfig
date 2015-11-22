@@ -2,7 +2,7 @@
 namespace DenDev\Plpconfig;
 use DenDev\Plpconfig\ConfigInterface;
 use DenDev\Plpadaptability\Adaptability;
-
+use DenDev\Plpconfig\Lib\ConfigLib;
 
 /**
  * Permet de charger la configuration. 
@@ -24,7 +24,7 @@ class Config extends Adaptability implements ConfigInterface
     public function __construct( $krl = false, $config_dir )
     {
         parent::__construct( $krl );
-	$this->_config = array();
+	$this->_config_lib = new ConfigLib( $config_dir );
     }
 
     /**
@@ -39,16 +39,7 @@ class Config extends Adaptability implements ConfigInterface
      */
     public function get_value( $config_name, $default_value = false )
     {
-	if( array_key_exists( $config_name, $this->_config ) )
-	{
-	    $value = $this->_config[$config_name];
-	}
-	else 
-	{
-	    $value = $default_value;
-	}
-
-	return $value;
+	return $this->_config_lib->get_value( $config_name, $default_value );
     }
 
     /**
