@@ -11,7 +11,7 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		$this->_config_dir = sys_get_temp_dir() . '/test/';
-		@mkdir( $this->_config_dir, 744 );
+		@mkdir( $this->_config_dir );
 		$content_test1 = "<?php return array( 'test1' => 'valeur test1 fichier test1', 'test2' => 'valeur test2 fichier test1', 'test3' => 'valeur test3 fichier test1' ); ";
 
 		file_put_contents( $this->_config_dir . 'test1.php', $content_test1 );

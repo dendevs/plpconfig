@@ -15,10 +15,8 @@ class ConfigLibTest extends \PHPUnit_Framework_TestCase
 	@mkdir( $this->_config_dir );
 
 	$this->_content_test1 = "<?php return array( 'test1' => 'valeur test1 fichier test1', 'test2' => 'valeur test2 fichier test1', 'test3' => 'valeur test3 fichier test1' ); ";
-	$this->_content_test2 = "<?php return array( 'test0' => 'valeur test0 fichier test2', 'test1' => 'valeur test1 fichier test2', 'test4' => 'valeur test4 fichier test2' ); ";
 
 	file_put_contents( $this->_config_dir . 'test1.php', $this->_content_test1 );
-	file_put_contents( $this->_config_dir . 'test2.php', $this->_content_test2 );
     }
 
     public function test_instanciate()
