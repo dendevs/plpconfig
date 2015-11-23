@@ -29,6 +29,13 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 		$this->assertEquals( 'valeur test1 fichier test1', $object->get_value( 'test1.test1' ) );
 	}
 
+	public function test_get_values()
+	{
+		$object = new Config( false, array( 'config_dir' => $this->_config_dir ) );
+		$values = array( 'test1' => 'valeur test1 fichier test1', 'test2' => 'valeur test2 fichier test1', 'test3' => 'valeur test3 fichier test1' );
+		$this->assertEquals( $values, $object->get_values( 'test1' ) );
+	}
+
 	public function tearDown()
 	{
 		@unlink( $this->_config_dir . 'test1.php' );

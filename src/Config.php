@@ -43,6 +43,20 @@ class Config extends Adaptability implements ConfigInterface
     }
 
     /**
+     * Retourne toute la configuration.
+     *
+     * Renvoi toute la config d'un service ou de tout les services
+     *
+     * @param string $service_name le nom du service dont on veut tout
+     *
+     * @return array tableau ou tableau de tableau de config
+     */
+    public function get_values( $service_name = false )
+    {
+	return $this->_config_lib->get_values( $service_name );
+    }
+
+    /**
      * Configuration par defaut du service
      *
      * La format pour une option de config est service_name.option_name.sous_option_name

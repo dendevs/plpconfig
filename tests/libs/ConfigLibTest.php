@@ -33,6 +33,13 @@ class ConfigLibTest extends \PHPUnit_Framework_TestCase
 	$this->assertFalse(  $object->get_value( 'not_found' ) );
     }
 
+    public function test_get_values()
+    {
+	$object = new ConfigLib( $this->_config_dir );
+	$values = array( 'test1' => 'valeur test1 fichier test1', 'test2' => 'valeur test2 fichier test1', 'test3' => 'valeur test3 fichier test1' );
+	$this->assertEquals( $values, $object->get_values( 'test1' ) );
+    }
+
     public function test_merge_with_default()
     {
 	$object = new ConfigLib( $this->_config_dir );

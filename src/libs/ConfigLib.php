@@ -73,6 +73,29 @@ class ConfigLib
     }
 
     /**
+     * Retourne toute la configuration.
+     *
+     * Renvoi toute la config d'un service ou de tout les services
+     *
+     * @param string $service_name le nom du service dont on veut tout
+     *
+     * @return array tableau ou tableau de tableau de config
+     */
+    public function get_values( $service_name = false )
+    {
+	if( $service_name )
+	{
+	    $values = $this->_configs[$service_name];
+	}
+	else
+	{
+	    $values = $this->_configs;
+	}
+
+	return $values;
+    }
+
+    /**
      * Fusionne les valeurs par defaut avec celle du fichier de config.
      *
      * Les valeurs du fichiers sont prioritaire.
