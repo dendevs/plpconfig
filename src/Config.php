@@ -21,10 +21,10 @@ class Config extends Adaptability implements ConfigInterface
      *
      * @return void
      */
-    public function __construct( $krl = false, $config_dir )
+    public function __construct( $krl = false, $args )
     {
         parent::__construct( $krl );
-	$this->_config_lib = new ConfigLib( $config_dir );
+	$this->_config_lib = new ConfigLib( $args['config_dir'] );
     }
 
     /**

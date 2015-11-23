@@ -19,13 +19,13 @@ class ConfigTest extends \PHPUnit_Framework_TestCase
 
 	public function test_instanciate()
 	{
-		$object = new Config( false, $this->_config_dir );
+		$object = new Config( false, array( 'config_dir' => $this->_config_dir ) );
 		$this->assertInstanceOf( "DenDev\Plpconfig\Config", $object );
 	}
 
 	public function test_get_value()
 	{
-		$object = new Config( false, $this->_config_dir );
+		$object = new Config( false, array( 'config_dir' => $this->_config_dir ) );
 		$this->assertEquals( 'valeur test1 fichier test1', $object->get_value( 'test1.test1' ) );
 	}
 
