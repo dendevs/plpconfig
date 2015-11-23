@@ -27,14 +27,14 @@ class ConfigLib
     /**
      * Constructor
      *
-     * instancie wise et recupere les configs dans le repertoire
+     * Recupere les configs dans le repertoire
      *
      * @param string $config_dir emplacement vers le repertoire ou se trouve les fichiers de config
      */
     public function __construct( $config_dir )
     {
 	$this->_file_lib = new FileLib( $config_dir );
-	$this->_set_wise( $config_dir );
+	$this->_set_config( $config_dir );
     }
 
     /**
@@ -42,7 +42,7 @@ class ConfigLib
      *
      * L'option coorespond a service.option_name. Si je veux la root_path du kernel -> kernel.option_name
      *
-     * @param string $option_name nom de l'option sous le format service.option_name
+     * @param string $config_name nom de l'option de Configuration a retrouver service.option_name.sous_option
      * @param string $default_value donne une valeur si la config n'existe pas
      *
      * @return mixed renvoi la valeur ou false
@@ -95,13 +95,16 @@ class ConfigLib
 
     // -
     /**
-     * Instancie wise si l'arg est valide
+     * Charge les configs trouver dans le repertoire
+     *
+     * Une config est un fichier .php portant le nom du service 
+     * La contenu du fichier est un return array( "ma_config_name" => "value" )
      *
      * @param string $config_dir emplacement vers le repertoire ou se trouve les fichiers de config
      *
      * @return bool true si reussit
      */
-    private function _set_wise( $config_dir )
+    private function _set_config( $config_dir )
     {
 	$ok = false;
 	$this->_configs = array();

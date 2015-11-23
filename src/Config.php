@@ -45,6 +45,8 @@ class Config extends Adaptability implements ConfigInterface
     /**
      * Configuration par defaut du service
      *
+     * La format pour une option de config est service_name.option_name.sous_option_name
+     *
      * @return array tableau associatif option value.
      */
     public function get_default_configs()
