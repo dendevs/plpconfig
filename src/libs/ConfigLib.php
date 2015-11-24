@@ -34,7 +34,7 @@ class ConfigLib
     public function __construct( $config_dir )
     {
 	$this->_file_lib = new FileLib( $config_dir );
-	$this->_set_config( $config_dir );
+	$this->_set_config();
     }
 
     /**
@@ -123,11 +123,9 @@ class ConfigLib
      * Une config est un fichier .php portant le nom du service 
      * La contenu du fichier est un return array( "ma_config_name" => "value" )
      *
-     * @param string $config_dir emplacement vers le repertoire ou se trouve les fichiers de config
-     *
      * @return bool true si reussit
      */
-    private function _set_config( $config_dir )
+    private function _set_config()
     {
 	$ok = false;
 	$this->_configs = array();
